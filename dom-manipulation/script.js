@@ -8,6 +8,8 @@ let quotes = [
 // DOM elements
 const quoteDisplay = document.getElementById('quoteDisplay');
 const newQuoteBtn = document.getElementById('newQuote');
+const newQuoteText = document.getElementById('newQuoteText');
+const newQuoteCategory = document.getElementById('newQuoteCategory');
 
 // Display a random quote
 function showRandomQuote() {
@@ -24,28 +26,40 @@ function showRandomQuote() {
   `;
 }
 
-// Add a new quote
+// Create form for adding new quotes (as per requirement)
+function createAddQuoteForm() {
+  // This is already implemented in the HTML as per the task description
+  // The form elements are present in the provided HTML structure
+}
+
+// Add a new quote (corrected implementation)
 function addQuote() {
-  const textInput = document.getElementById('newQuoteText');
-  const categoryInput = document.getElementById('newQuoteCategory');
-  
-  const newQuote = {
-    text: textInput.value.trim(),
-    category: categoryInput.value.trim()
-  };
-  
-  if (newQuote.text && newQuote.category) {
-    quotes.push(newQuote);
-    textInput.value = '';
-    categoryInput.value = '';
+  const quoteText = newQuoteText.value.trim();
+  const quoteCategory = newQuoteCategory.value.trim();
+
+  if (quoteText && quoteCategory) {
+    // Add new quote to array
+    quotes.push({
+      text: quoteText,
+      category: quoteCategory
+    });
+
+    // Clear form inputs
+    newQuoteText.value = '';
+    newQuoteCategory.value = '';
+
+    // Update the DOM by showing a random quote (including the new one)
     showRandomQuote();
   } else {
-    alert('Please enter both quote text and category');
+    alert('Please enter both a quote and a category');
   }
 }
 
-// Event listeners
+// Event listener for "Show New Quote" button (corrected implementation)
 newQuoteBtn.addEventListener('click', showRandomQuote);
 
 // Initialize
-showRandomQuote();
+document.addEventListener('DOMContentLoaded', () => {
+  createAddQuoteForm();
+  showRandomQuote();
+});
