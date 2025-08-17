@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .quote { background: #f9f9f9; padding: 15px; margin: 10px 0; border-left: 5px solid #ccc; }
+    .category { font-style: italic; color: #666; }
+    form { margin: 20px 0; padding: 15px; background: #f0f0f0; }
+    input, button { padding: 8px; margin: 5px 0; }
+  </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
-
-  <!-- Display area -->
-  <p id="quoteDisplay">Click the button to see a quote!</p>
-
-  <!-- Buttons -->
-  <button id="newQuoteBtn">Show New Quote</button>
-
-  <!-- Add new quote -->
-  <h3>Add a New Quote</h3>
-  <input type="text" id="newQuoteInput" placeholder="Enter your quote">
-  <button id="addQuoteBtn">Add Quote</button>
+  
+  <div id="quoteDisplay" class="quote"></div>
+  <button id="newQuote">Show New Quote</button>
+  
+  <div>
+    <h3>Add New Quote</h3>
+    <form id="quoteForm">
+      <input id="newQuoteText" type="text" placeholder="Enter a new quote" required>
+      <input id="newQuoteCategory" type="text" placeholder="Enter quote category" required>
+      <button type="button" onclick="addQuote()">Add Quote</button>
+    </form>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
