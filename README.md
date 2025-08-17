@@ -1,0 +1,1 @@
+A simple yet powerful web application built with HTML, CSS, and JavaScript that dynamically generates, displays, and manages quotes. The project evolves step by step, starting from basic DOM manipulation to implementing local storage, JSON import/export, filtering, and simulated server syncing.
